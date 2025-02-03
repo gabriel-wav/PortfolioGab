@@ -1,54 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio GAB</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body class="container">
-    <h1>Gabriel Fernandes da Silva</h1>
-    <h2>Programador. Visionário. Criador de soluções.</h2>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Gabriel Fernandes da Silva</h1>
+        <h2>Desenvolvedor de Software & Eletroeletrônica</h2>
+      </div>
+    </header>
 
-    <p>Com um olhar atento para detalhes e uma paixão por transformar ideias em realidade, dedico-me a desenvolver
-        interfaces intuitivas e projetos eletrônicos inovadores. Meu trabalho combina criatividade, lógica e uma base
-        técnica sólida, adquirida em mais de seis meses de imersão na área de desenvolvimento de software e
-        eletroeletrônica.</p>
-    <p>Além disso, minha experiência com HTML5, CSS3, C++, Python, Figma e Git me permite navegar entre design e código
-        com fluidez, sempre buscando entregar resultados que superem expectativas. Como estudante técnico e entusiasta
-        do aprendizado contínuo, encaro cada projeto como uma nova oportunidade de criar, conectar e evoluir.</p>
+    <section class="intro container">
+      <a
+        href="https://drive.google.com/file/d/1bwQoQM92ZA0fLq_Xg7cN_WHNDc4Jkr3D/view?usp=sharing"
+        target="_blank"
+      >
+        <img src="imagens/gabriel.jpg" alt="Minha foto" class="fotodeperfil" />
+      </a>
+      <p>
+        Olá! Sou Gabriel Fernandes, um entusiasta de tecnologia com paixão por
+        desenvolvimento de software e eletrônica. Com mais de seis meses de
+        experiência, busco constantemente aprimorar minhas habilidades e criar
+        soluções inovadoras. Meu foco está em desenvolvimento front-end, C++,
+        Python, e projetos com ESP32 para IoT. Adoro transformar ideias em
+        realidade e estou sempre em busca de novos desafios.
+      </p>
+    </section>
 
-    <h3>Pronto para explorar o que posso construir?</h3>
+    <section class="skills container">
+      <h2>Habilidades</h2>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <h3>HTML5</h3>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS3</h3>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-js-square"></i>
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+        </div>
+        <div class="skill-card">
+          <img src="imagens/c++.png" alt="C++" class="c-logo" />
+          <h3>C++</h3>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-microchip"></i>
+          <h3>ESP32/IoT</h3>
+        </div>
+      </div>
+    </section>
 
-    <h1>Sobre mim</h1>
-    <h2>Apaixonado por Tecnologia, Design e Inovação</h2>
-    <p>Meu nome é Gabriel Fernandes, sou estudante técnico na área de desenvolvimento de software e eletroeletrônica, e iniciei minha jornada como desenvolvedor há mais de seis meses. Desde então, venho me dedicando a criar soluções eficientes e esteticamente agradáveis que conectam tecnologia e funcionalidade.</p>
-    <p>Com conhecimentos em HTML5, CSS3, C++, Python, Figma e Git, tenho habilidade tanto para desenvolver interfaces atraentes quanto para estruturar lógicas funcionais. Minha formação técnica me proporciona uma visão prática para resolver problemas do mundo real, enquanto meu interesse em UI/UX guia a experiência do usuário no centro de cada projeto.</p>
+    <div class="container">
+      <h2>Projetos</h2>
+    </div>
+    <section class="projetos-container">
+      <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+      <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      <div class="projeto-grid">
+        <div class="projeto-card">
+          <img
+            src="imagens/logovolkmann.png"
+            alt="Centro Ortopédico Volkmann"
+          />
+          <h3>Clínica Volkmann</h3>
+          <p>Site para um centro ortopédico ficticio.</p>
+          <a
+            href="https://senai-morvan-figueiredo.github.io/ClinicaVolkmann/"
+            class="btn"
+            >Ver Projeto</a
+          >
+        </div>
+        <div class="projeto-card">
+          <img src="imagens/sistema-solar.jpg" alt="Sistema Solar" />
+          <h3>Sistema Solar</h3>
+          <p>Sistema Solar feito com CSS.</p>
+          <a href="https://gabriel-wav.github.io/Sistema-Solar/" class="btn"
+            >Ver Projeto</a
+          >
+        </div>
+        <div class="projeto-card">
+          <img src="imagens/fotografia.jpg" alt="Fotografia" />
+          <h3>Portfolio de Fotografia</h3>
+          <p>Um portfolio fictício para fotógrafo.</p>
+          <a
+            href="https://gabriel-wav.github.io/CSS-Grid/index.html"
+            class="btn"
+            >Ver Projeto</a
+          >
+        </div>
 
-    <h2>Experiência e Projetos</h2>
-    <p>Trabalhei em um projeto de site para uma clínica de ortopedia, onde fui responsável por UI/UX e CSS, além de colaborar em equipe utilizando o método Scrum. Além disso, explorei a programação em projetos com ESP32, aplicando conceitos de IoT e automação para resolver problemas do dia a dia de forma inovadora.</p>
+        <!-- mais projetos aqui -->
+      </div>
+    </section>
 
-    <div>
-    <h3>Desenvolvimento Front-End</h3>
-    <p>Interfaces acessíveis e atraentes.</p>
-    <h3>Programação em C++ e Python</h3>
-    <p>Soluções robustas e escaláveis.</p>
-    <h3>Projetos IoT com ESP32</h3>
-    <p>Integração de hardware e software para um mundo mais conectado.</p>
-</div>
+    <section class="contact container">
+      <h2>Contato</h2>
+      <p>
+        <i class="fas fa-envelope"></i> Email:
+        <a href="mailto:gabfer.silva@gmail.com">gabfer.silva@gmail.com</a>
+      </p>
+      <p>
+        <i class="fab fa-linkedin"></i> LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/gabriel-fernandes-da-silva-454a0b208/"
+          >Gabriel Fernandes da Silva</a
+        >
+      </p>
+      <p>
+        <i class="fab fa-github"></i> GitHub:
+        <a href="https://github.com/gabriel-wav">gabriel-wav</a>
+      </p>
+      <p>
+        <i class="fas fa-file-alt"></i> Currículo:
+        <a
+          href="https://drive.google.com/file/d/1bwQoQM92ZA0fLq_Xg7cN_WHNDc4Jkr3D/view?usp=sharing"
+          target="_blank"
+          >Meu CV</a
+        >
+      </p>
+    </section>
 
-<h1>Meus projetos</h1>
+    <footer>
+      <div class="container">
+        <p>© 2025 Gabriel Fernandes da Silva. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <script>
+      const projetoContainer = document.querySelector(".projetos-container");
+      const projetoGrid = document.querySelector(".projeto-grid");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
 
+      let cardWidth = document.querySelector(".projeto-card").offsetWidth;
+      let currentPosition = 0;
 
+      nextBtn.addEventListener("click", () => {
+        currentPosition -= cardWidth + 20; // 20 é o espaçamento entre os cards (gap)
+        projetoGrid.style.transform = `translateX(${currentPosition}px)`;
+      });
 
-<h1>Contatos</h1>
-
-
-
-
-
-</body>
-
+      prevBtn.addEventListener("click", () => {
+        currentPosition += cardWidth + 20;
+        projetoGrid.style.transform = `translateX(${currentPosition}px)`;
+      });
+    </script>
+  </body>
 </html>
