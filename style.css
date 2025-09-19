@@ -1,9 +1,26 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+  --cor-primaria: #4285F4;
+  --cor-primaria-hover: #3367D6;
+  --cor-fundo: #f0f0f0;
+  --cor-texto: #333;
+  --cor-branco: #fff;
+  --cor-footer: #333;
+}
+
+/* Adicionado para rolagem suave ao clicar nos links do menu */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
   line-height: 1.6;
 }
 
@@ -13,18 +30,69 @@ body {
   padding: 20px;
 }
 
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
 header {
-  background-color: #4285F4;
-  color: #fff;
-  padding: 20px 0;
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 10px 0;
   text-align: center;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.menu-principal ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Remove as bolinhas da lista */
+}
+
+.menu-principal li {
+  display: inline-block; /* Coloca os itens lado a lado */
+  margin-left: 20px;
+}
+
+.menu-principal a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-principal a:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+
+/* ==========================================================================
+   3. SEÇÃO DE INTRODUÇÃO
+   ========================================================================== */
 .intro {
   text-align: left;
   display: flex;
   align-items: center;
   gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .fotodeperfil {
@@ -32,17 +100,21 @@ header {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s ease; /* Adiciona a transição */
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .fotodeperfil:hover {
-  transform: scale(1.1); /* Aumenta a escala em 10% */
-  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  transform: scale(1.05); /* Efeito de zoom */
+  box-shadow: 0 0 15px rgba(66, 133, 244, .5);
 }
 
-
+/* ==========================================================================
+   4. SEÇÃO DE HABILIDADES (SKILLS) - CORREÇÃO DO HOVER
+   ========================================================================== */
+.skills {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
 .skill-grid {
   display: grid;
@@ -51,26 +123,24 @@ header {
 }
 
 .skill-card {
-  background-color: #fff;
+  background-color: var(--cor-branco);
   padding: 20px;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease; /* Adiciona a transição */
-
+  /* ADICIONE ESTA LINHA PARA A TRANSIÇÃO SUAVE */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ADICIONE ESTA REGRA INTEIRA DE VOLTA */
 .skill-card:hover {
-  transform: scale(1.05); /* Aumenta a escala em 5% */
-  box-shadow: 0 0 15px rgba(66,133,244,.5);
-
+  transform: scale(1.05); /* Efeito de zoom */
+  box-shadow: 0 0 15px rgba(66, 133, 244, .5); /* Efeito de sombra azulada */
 }
-
-
 
 .skill-card i {
   font-size: 3em;
-  color: #4285F4;
+  color: var(--cor-primaria);
   margin-bottom: 10px;
 }
 
@@ -79,113 +149,113 @@ header {
   height: auto;
 }
 
+/* ==========================================================================
+   5. SEÇÃO DE PROJETOS (CARROSSEL)
+   ========================================================================== */
+#projetos {
+  padding-bottom: 0;
+}
+
 .projetos-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+  max-width: 100%; /* Ocupa a largura toda para o scroll funcionar bem */
+  padding: 20px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
 .projeto-grid {
+  width: max-content; /* Impede a quebra de linha dos cards */
   display: flex;
-  transition: transform 0.5s ease-in-out;
   gap: 20px;
+  padding: 0 5%; /* Adiciona um espaço nas laterais */
 }
 
 .projeto-card {
-  flex: 0 0 calc(25% - 20px);
-  background-color: #fff;
+  scroll-snap-align: center;
+  width: 300px; /* Largura fixa para os cards */
+  flex-shrink: 0; /* Impede que os cards encolham */
+  background-color: var(--cor-branco);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-
 }
-
 
 .projeto-card img {
   max-width: 100%;
-  width: max-content;
-  max-height: 100%;
-  height: 300px;
-}
-
-
-.projetos-container button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.projetos-container #prevBtn {
-  left: 10px;
-}
-
-.projetos-container #nextBtn {
-  right: 10px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
 
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4285F4;
-  color: #fff;
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
 }
-
 
 .btn:hover {
-  background-color: #3367D6;
+  background-color: var(--cor-primaria-hover);
 }
 
+/* ==========================================================================
+   6. SEÇÃO DE CONTATO
+   ========================================================================== */
+.contact {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
-.contact i {
+.contact-flex {
+  display: flex;
+
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact p i {
   margin-right: 10px;
+  color: var(--cor-primaria);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Garante que padding não aumente a largura */
 }
 
 
-
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--cor-footer);
+  color: var(--cor-branco);
   text-align: center;
   padding: 10px 0;
   margin-top: 30px;
-}
-
-
-/* Responsividade */
-
-@media (max-width: 768px) {
-  .intro {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .fotodeperfil {
-      margin: 0 auto 20px;
-  }
-
-  .projeto-grid {
-      flex-wrap: wrap;
-  }
-
-  .projeto-card {
-      flex: 0 0 calc(50% - 20px);
-  }
-}
-
-
-@media (max-width: 500px) {
-  .projeto-card {
-      flex: 0 0 100%;
-  }
 }
