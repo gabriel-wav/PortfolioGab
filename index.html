@@ -1,153 +1,549 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio GAB</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <title>Gabriel Fernandes — Python Backend Developer</title>
+    <meta
+      name="description"
+      content="Python backend developer building REST APIs with Django and PostgreSQL. Currently working on AI-powered recruitment systems and full-text search."
+    />
 
-<body>
-  <header>
-    <div class="container header-container">
-      <div>
-        <h1>Gabriel Fernandes da Silva</h1>
-        <h2>Desenvolvedor de Software Multiplataforma</h2>
-      </div>
-      <nav class="menu-principal">
-        <ul>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Gabriel Fernandes — Python Backend Developer"
+    />
+    <meta
+      property="og:description"
+      content="Python backend developer building REST APIs with Django and PostgreSQL."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://gabriel-wav.github.io/PortfolioGab/"
+    />
+
+    <!-- Fonts: Syne (display) + IBM Plex Mono (code labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ============================================================
+       NAV
+  ============================================================ -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner container">
+        <span class="nav-logo">gabriel-fs.</span>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section class="intro container">
-    <a href="https://drive.google.com/file/d/1pBzVCCSag-ZmpZaQSLDHmTq3AJTZXZQY/view?usp=drive_link" target="_blank">
-      <img src="imagens/minha_foto.jpg" alt="Minha foto" class="fotodeperfil" />
-    </a>
-    <p>
-      Olá! Sou Gabriel Fernandes, um entusiasta de tecnologia com paixão por
-      desenvolvimento de software e eletrônica. Com mais de dois anos de
-      experiência, busco constantemente aprimorar minhas habilidades e criar
-      soluções inovadoras. Meu foco está em desenvolvimento front-end, C++,
-      Python, e projetos com ESP32 para IoT. Adoro transformar ideias em
-      realidade e estou sempre em busca de novos desafios.
-    </p>
-  </section>
-
-  <section id="habilidades" class="skills container">
-    <h2>Habilidades</h2>
-    <div class="skill-grid">
-      <div class="skill-card">
-        <i class="fab fa-html5"></i>
-        <h3>HTML5</h3>
       </div>
-      <div class="skill-card">
-        <i class="fab fa-css3-alt"></i>
-        <h3>CSS3</h3>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-js-square"></i>
-        <h3>JavaScript</h3>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-python"></i>
-        <h3>Python</h3>
-      </div>
-      <div class="skill-card">
-        <img src="imagens/c++.png" alt="C++" class="c-logo" />
-        <h3>C++</h3>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-microchip"></i>
-        <h3>ESP32/IoT</h3>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <section id="projetos" class="container">
-    <h2>Projetos</h2>
-  </section>
-
-  <section class="projetos-container">
-    <div class="projeto-grid">
-      <div class="projeto-card">
-        <img style="border-radius: 70px;" src="imagens/RadarPet_logo.png" alt="Radar Pet" />
-        <h3>Radar Pet</h3>
-        <p>Site para anúncio de animais perdidos e encontrados.</p>
-        <a href="https://github.com/gabriel-wav/RadarPet" class="btn">Ver Projeto</a>
+    <!-- ============================================================
+       HERO
+  ============================================================ -->
+    <header class="hero" role="banner">
+      <div class="container hero-inner">
+        <div class="hero-tag">
+          <span class="dot"></span>
+          Available for junior positions
+        </div>
+        <h1 class="hero-name">Gabriel<br />Fernandes</h1>
+        <p class="hero-role">Python Backend Developer</p>
+        <p class="hero-desc">
+          Building REST APIs with Django, DRF, and PostgreSQL.<br />
+          Focus on authentication systems, database design, and backend
+          integrations.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See my work</a>
+          <a
+            href="https://github.com/gabriel-wav"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-ghost"
+            >GitHub</a
+          >
+        </div>
+        <div class="hero-stack">
+          <span class="stack-pill">Python</span>
+          <span class="stack-pill">Django</span>
+          <span class="stack-pill">DRF</span>
+          <span class="stack-pill">PostgreSQL</span>
+          <span class="stack-pill">REST APIs</span>
+          <span class="stack-pill">JWT</span>
+        </div>
       </div>
-      <div class="projeto-card">
-        <img src="imagens/logovolkmann.png" alt="Centro Ortopédico Volkmann" />
-        <h3>Clínica Volkmann</h3>
-        <p>Site para um centro ortopédico ficticio.</p>
-        <a href="https://github.com/gabriel-wav/ClinicaVolkmann" class="btn">Ver Projeto</a>
+    </header>
+
+    <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+    <main>
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+        <div class="container">
+          <h2 id="projects-heading" class="section-title">Projects</h2>
+
+          <!-- ── FEATURED PROJECT ── -->
+          <article
+            class="project-card project-card--featured"
+            aria-label="Vagalume Carreiras — featured project"
+          >
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-badge">Main project</span>
+                <span class="project-type">Team · Backend lead</span>
+              </div>
+              <h3 class="project-name">Vagalume Carreiras</h3>
+              <p class="project-desc">
+                AI-powered recruitment platform that matches candidates to job
+                openings using semantic similarity. The system compares
+                candidate profiles and job descriptions via sentence embeddings
+                and cosine similarity, returning a ranked list of matches.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight">
+                  <span class="highlight-label">Matching engine</span>
+                  <span class="highlight-value"
+                    >Sentence-Transformers + cosine similarity</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">AI integration</span>
+                  <span class="highlight-value">Google Gemini API</span>
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">Auth</span>
+                  <span class="highlight-value"
+                    >JWT + password recovery via SMTP / Twilio</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">My role</span>
+                  <span class="highlight-value"
+                    >Backend architecture, REST API, recommendation system</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-stack">
+                <span>Python</span><span>Django</span><span>DRF</span>
+                <span>PostgreSQL</span><span>Sentence-Transformers</span>
+                <span>Gemini API</span><span>Twilio</span>
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="https://github.com/gabriel-wav"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  View on GitHub
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 12L12 2M12 2H5M12 2V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="project-card project-card--featured"
+            aria-label="RadarPet — featured project"
+          >
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-badge">Main project</span>
+                <span class="project-type">Fullstack · Solo project</span>
+              </div>
+              <h3 class="project-name">RadarPet</h3>
+              <p class="project-desc">
+                Lost pet tracking platform designed to reconnect owners with
+                their animals faster. The system allows users to report missing
+                pets, browse nearby sightings, and increase recovery chances
+                through centralized data and geolocation-based visibility.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight">
+                  <span class="highlight-label">Core system</span>
+                  <span class="highlight-value"
+                    >Pet reporting + search workflow</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">Geolocation</span>
+                  <span class="highlight-value"
+                    >Location-based filtering and visibility</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">Data handling</span>
+                  <span class="highlight-value"
+                    >Structured pet profiles with status tracking</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">My role</span>
+                  <span class="highlight-value"
+                    >Full system design, frontend + backend implementation</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-stack">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                <span>Python</span><span>Django</span><span>SQLite</span>
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="https://github.com/gabriel-wav/RadarPet"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  View on GitHub
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 12L12 2M12 2H5M12 2V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── IN PROGRESS ── -->
+          <article
+            class="project-card project-card--wip"
+            aria-label="LinkVault API — work in progress"
+          >
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-badge project-badge--wip"
+                  >In progress</span
+                >
+                <span class="project-type">Solo · Backend</span>
+              </div>
+              <h3 class="project-name">LinkVault API</h3>
+              <p class="project-desc">
+                A personal bookmark manager API. Save a URL and the system
+                automatically fetches the page title and description. Search
+                bookmarks using PostgreSQL full-text search with
+                <code>tsvector</code> indexing.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight">
+                  <span class="highlight-label">Search</span>
+                  <span class="highlight-value"
+                    >PostgreSQL tsvector + GIN index</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">Auth</span>
+                  <span class="highlight-value"
+                    >JWT with refresh token rotation</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">Auto-fetch</span>
+                  <span class="highlight-value"
+                    >BeautifulSoup4 scrapes title + description on save</span
+                  >
+                </div>
+                <div class="highlight">
+                  <span class="highlight-label">Deploy</span>
+                  <span class="highlight-value"
+                    >Railway (PostgreSQL included)</span
+                  >
+                </div>
+              </div>
+
+              <div class="project-stack">
+                <span>Python</span><span>Django</span><span>DRF</span>
+                <span>PostgreSQL</span><span>BeautifulSoup4</span>
+                <span>pytest</span><span>Railway</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── LEARNING PROJECTS ── -->
+          <div class="learning-projects">
+            <p class="learning-label">Earlier exercises</p>
+            <div class="learning-grid">
+              <a
+                href="https://github.com/gabriel-wav/sitesapatos"
+                target="_blank"
+                rel="noopener"
+                class="learning-card"
+              >
+                <span class="learning-name">Arnaldo Shoes</span>
+                <span class="learning-tech">HTML · CSS</span>
+              </a>
+              <a
+                href="https://github.com/gabriel-wav/Fotografo-Wilson"
+                target="_blank"
+                rel="noopener"
+                class="learning-card"
+              >
+                <span class="learning-name">Photography Portfolio</span>
+                <span class="learning-tech">HTML · CSS Grid</span>
+              </a>
+              <a
+                href="https://github.com/gabriel-wav/separador-de-arquivos"
+                target="_blank"
+                rel="noopener"
+                class="learning-card"
+              >
+                <span class="learning-name">File Organizer</span>
+                <span class="learning-tech">Python · Tkinter</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         SKILLS
+    ============================================================ -->
+      <section
+        id="skills"
+        class="section section--alt"
+        aria-labelledby="skills-heading"
+      >
+        <div class="container">
+          <h2 id="skills-heading" class="section-title">Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3 class="skill-group-title">Backend</h3>
+              <ul class="skill-list">
+                <li>
+                  <span class="skill-name">Python</span
+                  ><span class="skill-note">Django, DRF, scripting</span>
+                </li>
+                <li>
+                  <span class="skill-name">PostgreSQL</span
+                  ><span class="skill-note">queries, indexing, tsvector</span>
+                </li>
+                <li>
+                  <span class="skill-name">MySQL</span
+                  ><span class="skill-note">basic to intermediate</span>
+                </li>
+                <li>
+                  <span class="skill-name">REST APIs</span
+                  ><span class="skill-note"
+                    >design, authentication, versioning</span
+                  >
+                </li>
+                <li>
+                  <span class="skill-name">Authentication</span
+                  ><span class="skill-note"
+                    >JWT, session, password recovery</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">Tools &amp; Other</h3>
+              <ul class="skill-list">
+                <li>
+                  <span class="skill-name">Git</span
+                  ><span class="skill-note">daily use, branching, PRs</span>
+                </li>
+                <li>
+                  <span class="skill-name">pytest</span
+                  ><span class="skill-note">unit testing</span>
+                </li>
+                <li>
+                  <span class="skill-name">Docker</span
+                  ><span class="skill-note">basic containerization</span>
+                </li>
+                <li>
+                  <span class="skill-name">NLP basics</span
+                  ><span class="skill-note">embeddings, cosine similarity</span>
+                </li>
+                <li>
+                  <span class="skill-name">HTML / CSS / JS</span
+                  ><span class="skill-note">functional, not a focus</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         ABOUT
+    ============================================================ -->
+      <section class="section" aria-labelledby="about-heading">
+        <div class="container about-inner">
+          <h2 id="about-heading" class="section-title">Background</h2>
+          <div class="about-text">
+            <p>
+              I'm studying Multiplatform Software Development at FATEC and
+              previously completed two technical programs at SENAI — Systems
+              Development and Electronics. The electronics background gives me a
+              practical view of how hardware and software interact, which
+              occasionally shows up in how I think about systems.
+            </p>
+            <p>
+              My main focus right now is backend development: building APIs that
+              work correctly, handle errors predictably, and can be deployed
+              without surprises. I'm particularly interested in systems that
+              process and retrieve information — full-text search, semantic
+              matching, external integrations.
+            </p>
+            <p>
+              I learn by shipping. Every project on this page is something I
+              built and deployed, not a tutorial clone.
+            </p>
+          </div>
+          <div class="about-edu">
+            <div class="edu-item">
+              <span class="edu-degree"
+                >Technologist — Multiplatform Software Development</span
+              >
+              <span class="edu-school">FATEC · in progress</span>
+            </div>
+            <div class="edu-item">
+              <span class="edu-degree"
+                >Technical Certificate — Systems Development</span
+              >
+              <span class="edu-school">SENAI</span>
+            </div>
+            <div class="edu-item">
+              <span class="edu-degree"
+                >Technical Certificate — Electronics</span
+              >
+              <span class="edu-school">SENAI</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+      <section
+        id="contact"
+        class="section section--alt"
+        aria-labelledby="contact-heading"
+      >
+        <div class="container contact-inner">
+          <h2 id="contact-heading" class="section-title">Contact</h2>
+          <p class="contact-desc">
+            Open to junior backend positions and internships in São Paulo or
+            remote.<br />
+            Best reached via LinkedIn or email.
+          </p>
+          <div class="contact-links">
+            <a
+              href="https://www.linkedin.com/in/gabriel-fs-dev/"
+              target="_blank"
+              rel="noopener"
+              class="contact-link"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="mailto:gabfer.silva@yahoo.com" class="contact-link">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              gabfer.silva@yahoo.com
+            </a>
+            <a
+              href="https://github.com/gabriel-wav"
+              target="_blank"
+              rel="noopener"
+              class="contact-link"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                />
+              </svg>
+              github.com/gabriel-wav
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-inner">
+        <span>Gabriel Fernandes · 2026</span>
+        <span>São Paulo, Brazil</span>
       </div>
-      <div class="projeto-card">
-        <img src="imagens/fotografia.jpg" alt="Fotografia" />
-        <h3>Portfolio de Fotografia</h3>
-        <p>Site fictício para portfolio de fotógrafo.</p>
-        <a href="https://github.com/gabriel-wav/Fotografo-Wilson" class="btn">Ver Projeto</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato" class="contact container">
-  
-  <div class="contact-flex">
-
-    <div class="contact-info">
-      <h2>Contato</h2>
-      <p>
-        <i class="fas fa-envelope"></i> Email:
-        <a href="mailto:gabfer.silva@yahoo.com">gabfer.silva@yahoo.com</a>
-      </p>
-      <p>
-        <i class="fab fa-linkedin"></i> LinkedIn:
-        <a href="https://www.linkedin.com/in/gabriel-fs-dev">Gabriel Fernandes da Silva</a>
-      </p>
-      <p>
-        <i class="fab fa-github"></i> GitHub:
-        <a href="https://github.com/gabriel-wav">gabriel-wav</a>
-      </p>
-    </div>
-
-    <form class="contact-form" action="https://formspree.io/f/xgvlgvad" method="POST">
-      <h2>Ou me envie uma mensagem:</h2>
-
-      <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-      </div>
-
-      <button type="submit" class="btn">Enviar</button>
-    </form>
-    
-  </div>
-</section>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Gabriel Fernandes da Silva. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-</body>
-
+    </footer>
+  </body>
 </html>

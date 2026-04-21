@@ -1,261 +1,673 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   VARIABLES & RESET
    ========================================================================== */
 :root {
-  --cor-primaria: #4285F4;
-  --cor-primaria-hover: #3367D6;
-  --cor-fundo: #f0f0f0;
-  --cor-texto: #333;
-  --cor-branco: #fff;
-  --cor-footer: #333;
+  --bg: #0c0c0c;
+  --bg-alt: #111111;
+  --surface: #181818;
+  --surface-2: #202020;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-mid: rgba(255, 255, 255, 0.14);
+
+  --text: #f0ece4;
+  --text-muted: #8a8680;
+  --text-faint: #4a4845;
+
+  --accent: #00c896; /* teal-green — backend / technical energy */
+  --accent-dim: rgba(0, 200, 150, 0.12);
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --max-w: 860px;
+  --section-gap: 6rem;
 }
 
-/* Adicionado para rolagem suave ao clicar nos links do menu */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 960px;
+  max-width: var(--max-w);
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 24px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface-2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent);
 }
 
 /* ==========================================================================
-   2. CABEÇALHO E NAVEGAÇÃO
+   NAV
    ========================================================================== */
-header {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branco);
-  padding: 10px 0;
-  text-align: center;
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12, 12, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
-.header-container {
+.nav-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 56px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.8em;
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
 }
 
-header h2 {
-  margin: 0;
-  font-size: 1.1em;
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
   font-weight: 400;
 }
 
-.menu-principal ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; /* Remove as bolinhas da lista */
+.nav-links a:hover {
+  color: var(--text);
 }
-
-.menu-principal li {
-  display: inline-block; /* Coloca os itens lado a lado */
-  margin-left: 20px;
-}
-
-.menu-principal a {
-  color: var(--cor-branco);
-  text-decoration: none;
-  font-size: 1.1em;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.menu-principal a:hover {
-  background-color: var(--cor-primaria-hover);
-}
-
 
 /* ==========================================================================
-   3. SEÇÃO DE INTRODUÇÃO
+   HERO
    ========================================================================== */
-.intro {
-  text-align: left;
+.hero {
+  padding: 7rem 0 6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero-tag {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
 }
 
-.fotodeperfil {
-  width: 150px;
-  height: 150px;
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--accent);
+  animation: pulse 2.4s ease-in-out infinite;
 }
 
-.fotodeperfil:hover {
-  transform: scale(1.05); /* Efeito de zoom */
-  box-shadow: 0 0 15px rgba(66, 133, 244, .5);
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
 }
 
-/* ==========================================================================
-   4. SEÇÃO DE HABILIDADES (SKILLS) - CORREÇÃO DO HOVER
-   ========================================================================== */
-.skills {
-  padding-top: 40px;
-  padding-bottom: 40px;
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text);
 }
 
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
-.skill-card {
-  background-color: var(--cor-branco);
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* ADICIONE ESTA LINHA PARA A TRANSIÇÃO SUAVE */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 520px;
+  line-height: 1.65;
 }
 
-/* ADICIONE ESTA REGRA INTEIRA DE VOLTA */
-.skill-card:hover {
-  transform: scale(1.05); /* Efeito de zoom */
-  box-shadow: 0 0 15px rgba(66, 133, 244, .5); /* Efeito de sombra azulada */
-}
-
-.skill-card i {
-  font-size: 3em;
-  color: var(--cor-primaria);
-  margin-bottom: 10px;
-}
-
-.c-logo {
-  width: 40px;
-  height: auto;
-}
-
-/* ==========================================================================
-   5. SEÇÃO DE PROJETOS (CARROSSEL)
-   ========================================================================== */
-#projetos {
-  padding-bottom: 0;
-}
-
-.projetos-container {
-  max-width: 100%; /* Ocupa a largura toda para o scroll funcionar bem */
-  padding: 20px 0;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.projeto-grid {
-  width: max-content; /* Impede a quebra de linha dos cards */
+.hero-actions {
   display: flex;
-  gap: 20px;
-  padding: 0 5%; /* Adiciona um espaço nas laterais */
-}
-
-.projeto-card {
-  scroll-snap-align: center;
-  width: 300px; /* Largura fixa para os cards */
-  flex-shrink: 0; /* Impede que os cards encolham */
-  background-color: var(--cor-branco);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.projeto-card img {
-  max-width: 100%;
-  height: 200px;
-  object-fit: contain;
-  margin-bottom: 15px;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: var(--cor-primaria);
-  color: var(--cor-branco);
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s;
   border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #041a12;
+}
+
+.btn-primary:hover {
+  background: #00e6ac;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-mid);
+}
+
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--surface);
+}
+
+.hero-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.75rem;
+}
+
+.stack-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+.section {
+  padding: var(--section-gap) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section--alt {
+  background: var(--bg-alt);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  margin-bottom: 16px;
+  transition: border-color 0.25s;
+}
+
+.project-card:hover {
+  border-color: var(--border-mid);
+}
+
+.project-card--featured {
+  border-color: rgba(0, 200, 150, 0.22);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 200, 150, 0.05) 0%,
+    var(--surface) 60%
+  );
+}
+
+.project-card--featured:hover {
+  border-color: rgba(0, 200, 150, 0.4);
+}
+
+.project-card--wip {
+  border-style: dashed;
+}
+
+.project-card-inner {
+  padding: 2rem 2.25rem;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.project-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.project-badge--wip {
+  background: rgba(250, 199, 117, 0.12);
+  color: #fac775;
+}
+
+.project-type {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+
+.project-name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 1.75rem;
+}
+
+.project-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.highlight-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.highlight-value {
+  font-size: 0.875rem;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 1.5rem;
+}
+
+.project-stack span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent);
+  transition: opacity 0.2s;
+}
+
+.project-link:hover {
+  opacity: 0.75;
+}
+
+/* Learning projects */
+.learning-projects {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.learning-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.learning-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.learning-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  transition: border-color 0.2s;
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: var(--cor-primaria-hover);
+.learning-card:hover {
+  border-color: var(--border-mid);
+}
+
+.learning-name {
+  font-size: 0.875rem;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.learning-tech {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
 }
 
 /* ==========================================================================
-   6. SEÇÃO DE CONTATO
+   SKILLS
    ========================================================================== */
-.contact {
-  padding-top: 40px;
-  padding-bottom: 40px;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
 }
 
-.contact-flex {
+.skill-group-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.skill-list {
+  list-style: none;
   display: flex;
-
-  gap: 40px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0;
 }
 
-.contact-info,
-.contact-form {
-  flex: 1;
-  min-width: 300px;
+.skill-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.contact p i {
-  margin-right: 10px;
-  color: var(--cor-primaria);
+.skill-list li:last-child {
+  border-bottom: none;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.skill-note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  text-align: right;
 }
-
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box; /* Garante que padding não aumente a largura */
-}
-
 
 /* ==========================================================================
-   7. RODAPÉ (FOOTER)
+   ABOUT
    ========================================================================== */
-footer {
-  background-color: var(--cor-footer);
-  color: var(--cor-branco);
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 30px;
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-edu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 14px;
+  border-left: 2px solid var(--border-mid);
+}
+
+.edu-degree {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.edu-school {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+.contact-inner {
+  max-width: 560px;
+}
+
+.contact-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  font-weight: 400;
+}
+
+.contact-link:hover {
+  border-color: var(--border-mid);
+  background: var(--surface-2);
+}
+
+.contact-link svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  padding: 2rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 680px) {
+  :root {
+    --section-gap: 4rem;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 5rem 0 4rem;
+  }
+  .hero-name {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
+  .project-card-inner {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .project-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
